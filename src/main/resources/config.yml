@@ -1,0 +1,20 @@
+Nekos:
+  - PlayerUserName
+
+Kittens:
+  - PlayerUserName
+
+NekoChat: true
+
+MeatOnly: true
+
+Pet: true
+Lovebite: true
+Nightvision: true
+Purr: true
+Earscratch: true
+Attention: true
+Hiss: true
+Scratch: true
+
+GlobalCommandMessages: false

@@ -1,0 +1,19 @@
+name: NekoC
+version: ${project.version}
+main: com.gmail.kurumitk78.nekoc.NekoC
+
+prefix: NekoC
+authors: [ Kurumi78 ]
+
+commands:
+  earscratch:
+  lovebite:
+  Nightvision:
+  Pet:
+  Purr:
+  NekoTF:
+  Attention:
+  Hiss:
+  Scratch:
+  
+  
