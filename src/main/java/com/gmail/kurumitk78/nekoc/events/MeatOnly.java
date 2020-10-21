@@ -10,27 +10,25 @@ import org.bukkit.event.*;
 
 public class MeatOnly implements Listener
 {
-    public static ArrayList<Material> edibleForCat = (ArrayList<Material>) Bukkit.getPluginManager().getPlugin("NekoC").getConfig().getList("UnedibleForCat");
+    public static ArrayList<String> edibleForCat = (ArrayList<String>) Bukkit.getPluginManager().getPlugin("NekoC").getConfig().getList("UnedibleForCat");
 
     @EventHandler
     public void onPlayerInteract(final PlayerItemConsumeEvent event) {
         if (NekoC.isNeko(event.getPlayer().getPlayer())) {
-            Material myMat;
+            String myMat;
             if (event.getItem() != null) {
-                myMat = event.getItem().getType();
+                myMat = event.getItem().getType().toString();
+                if (MeatOnly.edibleForCat.contains(myMat)) {
+                    event.getPlayer().sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You cannot eat that silly kitty.");
+                    event.setCancelled(true);
+                }
+                else if (myMat.equals("COD") || myMat.equals("SALMON") || myMat.equals("TROPICAL_FISH")) {
+                    final Player p = event.getPlayer();
+                    p.setFoodLevel(p.getFoodLevel() + 4);
+                    p.setSaturation(p.getSaturation() + 9.4f);
+                }
             }
-            else {
-                myMat = Material.AIR;
-            }
-            if (MeatOnly.edibleForCat.contains(myMat)) {
-                event.getPlayer().sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You cannot eat that silly kitty.");
-                event.setCancelled(true);
-            }
-            else if (myMat.equals(Material.COD) || myMat.equals(Material.SALMON) || myMat.equals(Material.TROPICAL_FISH)) {
-                final Player p = event.getPlayer();
-                p.setFoodLevel(p.getFoodLevel() + 4);
-                p.setSaturation(p.getSaturation() + 9.4f);
-            }
+
         }
     }
 

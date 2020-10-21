@@ -20,18 +20,18 @@ Scratch: true
 GlobalCommandMessages: false
 
 UnedibleForCat:
-  - Material.APPLE
-  - Material.MUSHROOM_STEW
-  - Material.BREAD
-  - Material.GOLDEN_APPLE
-  - Material.ENCHANTED_GOLDEN_APPLE
-  - Material.MELON_SLICE
-  - Material.DRIED_KELP
-  - Material.CARROT
-  - Material.POTATO
-  - Material.BAKED_POTATO
-  - Material.POISONOUS_POTATO
-  - Material.PUMPKIN_PIE
-  - Material.BEETROOT
-  - Material.BEETROOT_SOUP
-  - Material.SWEET_BERRIES
+  - APPLE
+  - MUSHROOM_STEW
+  - BREAD
+  - GOLDEN_APPLE
+  - ENCHANTED_GOLDEN_APPLE
+  - MELON_SLICE
+  - DRIED_KELP
+  - CARROT
+  - POTATO
+  - BAKED_POTATO
+  - POISONOUS_POTATO
+  - PUMPKIN_PIE
+  - BEETROOT
+  - BEETROOT_SOUP
+  - SWEET_BERRIES
