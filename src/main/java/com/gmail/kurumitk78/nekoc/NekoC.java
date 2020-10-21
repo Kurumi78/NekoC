@@ -14,7 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.List;
 
 public final class NekoC extends JavaPlugin {
-    public FileConfiguration config;
+    public FileConfiguration config = this.getConfig();
     public static List<String> nekoListP;
     public static List<String> kittenListP;
     public static boolean globalCommands;
@@ -23,9 +23,9 @@ public final class NekoC extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
-        NekoC.globalCommands = this.config.getBoolean("GlobalCommandMessages");
-        NekoC.nekoListP = this.config.getStringList("Nekos");
-        NekoC.kittenListP = this.config.getStringList("Kittens");
+        NekoC.globalCommands = config.getBoolean("GlobalCommandMessages");
+        NekoC.nekoListP = config.getStringList("Nekos");
+        NekoC.kittenListP = config.getStringList("Kittens");
         if (this.config.getBoolean("Pet")) {
             this.getCommand("Pet").setExecutor(new Pet());
         }
