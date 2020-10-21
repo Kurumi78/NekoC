@@ -3,6 +3,7 @@ package com.gmail.kurumitk78.nekoc;
 import com.gmail.kurumitk78.nekoc.commands.*;
 import com.gmail.kurumitk78.nekoc.events.*;
 import com.gmail.kurumitk78.nekoc.events.Hiss;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -57,7 +58,8 @@ public final class NekoC extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new MeatOnly(), this);
         }
         this.getCommand("nekotf").setExecutor(new NekoTF());
-
+        int pluginId = 9164; // <-- Replace with the id of your plugin!
+        Metrics metrics = new Metrics(this, pluginId);
     }
 
     @Override
