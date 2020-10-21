@@ -24,9 +24,8 @@ public final class NekoC extends JavaPlugin {
     public void onEnable() {
         this.saveDefaultConfig();
         NekoC.globalCommands = this.config.getBoolean("GlobalCommandMessages");
-        NekoC.nekoListP = (List<String>)this.config.getStringList("Nekos");
-        NekoC.kittenListP = (List<String>)this.config.getStringList("Kittens");
-        MeatOnly.registerUnedibleItems();
+        NekoC.nekoListP = this.config.getStringList("Nekos");
+        NekoC.kittenListP = this.config.getStringList("Kittens");
         if (this.config.getBoolean("Pet")) {
             this.getCommand("Pet").setExecutor(new Pet());
         }
@@ -56,6 +55,7 @@ public final class NekoC extends JavaPlugin {
         }
         if (this.config.getBoolean("MeatOnly")) {
             Bukkit.getPluginManager().registerEvents(new MeatOnly(), (Plugin)this);
+            MeatOnly.registerUnedibleItems();
         }
         this.getCommand("nekotf").setExecutor(new NekoTF());
 
