@@ -55,7 +55,6 @@ public final class NekoC extends JavaPlugin {
         }
         if (this.config.getBoolean("MeatOnly")) {
             Bukkit.getPluginManager().registerEvents(new MeatOnly(), (Plugin)this);
-            MeatOnly.registerUnedibleItems();
         }
         this.getCommand("nekotf").setExecutor(new NekoTF());
 

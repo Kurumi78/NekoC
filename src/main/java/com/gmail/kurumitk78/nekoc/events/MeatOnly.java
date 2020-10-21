@@ -10,7 +10,7 @@ import org.bukkit.event.*;
 
 public class MeatOnly implements Listener
 {
-    public static ArrayList<Material> edibleForCat;
+    public static ArrayList<Material> edibleForCat = (ArrayList<Material>) Bukkit.getPluginManager().getPlugin("NekoC").getConfig().getList("UnedibleForCat");
 
     @EventHandler
     public void onPlayerInteract(final PlayerItemConsumeEvent event) {
@@ -35,7 +35,12 @@ public class MeatOnly implements Listener
     }
 
     public static void registerUnedibleItems() {
-        MeatOnly.edibleForCat.add(Material.APPLE);
+
+
+
+
+        /*
+        MeatOnly.edibleForCat.add(Material.APPLE);        //This is the legacy way I accomplished this.
         MeatOnly.edibleForCat.add(Material.MUSHROOM_STEW);
         MeatOnly.edibleForCat.add(Material.BREAD);
         MeatOnly.edibleForCat.add(Material.GOLDEN_APPLE);
@@ -50,6 +55,8 @@ public class MeatOnly implements Listener
         MeatOnly.edibleForCat.add(Material.BEETROOT);
         MeatOnly.edibleForCat.add(Material.BEETROOT_SOUP);
         MeatOnly.edibleForCat.add(Material.SWEET_BERRIES);
+
+         */
     }
 
     static {
