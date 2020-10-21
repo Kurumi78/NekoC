@@ -12,13 +12,13 @@ public class KittenTF implements CommandExecutor
             if (commandTarget.isValid()) {
                 if (!NekoC.isKitten(commandTarget)) {
                     NekoC.kittenListP.add(args[0]);
-                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Kittens", (Object)NekoC.kittenListP);
+                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Kittens",NekoC.kittenListP);
                     commandSender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Made " + args[0] + " a kitten!");
                     Bukkit.getPluginManager().getPlugin("NekoC").saveConfig();
                 }
                 else {
                     NekoC.kittenListP.remove(commandTarget.getName());
-                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Kittens", (Object)NekoC.kittenListP);
+                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Kittens",NekoC.kittenListP);
                     commandSender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " " + args[0] + " is no longer a kitten!");
                     Bukkit.getPluginManager().getPlugin("NekoC").saveConfig();
                 }

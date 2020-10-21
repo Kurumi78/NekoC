@@ -13,13 +13,13 @@ public class NekoTF implements CommandExecutor
                 final Player commandTarget = ((Player)commandSender).getPlayer();
                 if (!NekoC.isNeko(commandTarget)) {
                     NekoC.nekoListP.add(commandTarget.getName());
-                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", (Object)NekoC.nekoListP);
+                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", NekoC.nekoListP);
                     Bukkit.getPluginManager().getPlugin("NekoC").saveConfig();
                     commandSender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Made you a neko!");
                 }
                 else {
                     NekoC.nekoListP.remove(commandTarget.getName());
-                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", (Object)NekoC.nekoListP);
+                    Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", NekoC.nekoListP);
                     Bukkit.getPluginManager().getPlugin("NekoC").saveConfig();
                     commandSender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You are no longer a neko!");
                 }
@@ -29,13 +29,13 @@ public class NekoTF implements CommandExecutor
                 if (commandTarget.isValid()) {
                     if (!NekoC.isNeko(commandTarget)) {
                         NekoC.nekoListP.add(args[0]);
-                        Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", (Object)NekoC.nekoListP);
+                        Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", NekoC.nekoListP);
                         commandSender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Made " + args[0] + " a neko!");
                         Bukkit.getPluginManager().getPlugin("NekoC").saveConfig();
                     }
                     else {
                         NekoC.nekoListP.remove(commandTarget.getName());
-                        Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", (Object)NekoC.nekoListP);
+                        Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", NekoC.nekoListP);
                         commandSender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " " + args[0] + " is no longer a neko!");
                         Bukkit.getPluginManager().getPlugin("NekoC").saveConfig();
                     }

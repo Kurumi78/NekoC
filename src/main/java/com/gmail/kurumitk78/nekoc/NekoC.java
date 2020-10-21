@@ -51,10 +51,10 @@ public final class NekoC extends JavaPlugin {
             this.getCommand("scratch").setExecutor(new Scratch());
         }
         if (this.config.getBoolean("NekoChat")) {
-            Bukkit.getPluginManager().registerEvents(new NekoChat(), (Plugin)this);
+            Bukkit.getPluginManager().registerEvents(new NekoChat(), this);
         }
         if (this.config.getBoolean("MeatOnly")) {
-            Bukkit.getPluginManager().registerEvents(new MeatOnly(), (Plugin)this);
+            Bukkit.getPluginManager().registerEvents(new MeatOnly(), this);
         }
         this.getCommand("nekotf").setExecutor(new NekoTF());
 

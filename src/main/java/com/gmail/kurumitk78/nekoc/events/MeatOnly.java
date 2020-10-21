@@ -26,7 +26,7 @@ public class MeatOnly implements Listener
                 event.getPlayer().sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You cannot eat that silly kitty.");
                 event.setCancelled(true);
             }
-            else if (myMat.equals((Object)Material.COD) || myMat.equals((Object)Material.SALMON) || myMat.equals((Object)Material.TROPICAL_FISH)) {
+            else if (myMat.equals(Material.COD) || myMat.equals(Material.SALMON) || myMat.equals(Material.TROPICAL_FISH)) {
                 final Player p = event.getPlayer();
                 p.setFoodLevel(p.getFoodLevel() + 4);
                 p.setSaturation(p.getSaturation() + 9.4f);
@@ -34,7 +34,4 @@ public class MeatOnly implements Listener
         }
     }
 
-    static {
-        MeatOnly.edibleForCat = new ArrayList<Material>();
-    }
 }
