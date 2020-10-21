@@ -34,31 +34,6 @@ public class MeatOnly implements Listener
         }
     }
 
-    public static void registerUnedibleItems() {
-
-
-
-
-        /*
-        MeatOnly.edibleForCat.add(Material.APPLE);        //This is the legacy way I accomplished this.
-        MeatOnly.edibleForCat.add(Material.MUSHROOM_STEW);
-        MeatOnly.edibleForCat.add(Material.BREAD);
-        MeatOnly.edibleForCat.add(Material.GOLDEN_APPLE);
-        MeatOnly.edibleForCat.add(Material.ENCHANTED_GOLDEN_APPLE);
-        MeatOnly.edibleForCat.add(Material.MELON_SLICE);
-        MeatOnly.edibleForCat.add(Material.DRIED_KELP);
-        MeatOnly.edibleForCat.add(Material.CARROT);
-        MeatOnly.edibleForCat.add(Material.POTATO);
-        MeatOnly.edibleForCat.add(Material.BAKED_POTATO);
-        MeatOnly.edibleForCat.add(Material.POISONOUS_POTATO);
-        MeatOnly.edibleForCat.add(Material.PUMPKIN_PIE);
-        MeatOnly.edibleForCat.add(Material.BEETROOT);
-        MeatOnly.edibleForCat.add(Material.BEETROOT_SOUP);
-        MeatOnly.edibleForCat.add(Material.SWEET_BERRIES);
-
-         */
-    }
-
     static {
         MeatOnly.edibleForCat = new ArrayList<Material>();
     }
