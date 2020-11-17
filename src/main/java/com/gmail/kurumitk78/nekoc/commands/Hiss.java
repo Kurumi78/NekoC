@@ -1,4 +1,4 @@
-package com.gmail.kurumitk78.nekoc.events;
+package com.gmail.kurumitk78.nekoc.commands;
 
 import org.bukkit.command.*;
 import org.bukkit.entity.*;

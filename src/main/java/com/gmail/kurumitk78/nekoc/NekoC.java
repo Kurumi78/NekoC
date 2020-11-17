@@ -2,13 +2,11 @@ package com.gmail.kurumitk78.nekoc;
 
 import com.gmail.kurumitk78.nekoc.commands.*;
 import com.gmail.kurumitk78.nekoc.events.*;
-import com.gmail.kurumitk78.nekoc.events.Hiss;
+import com.gmail.kurumitk78.nekoc.commands.Hiss;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
