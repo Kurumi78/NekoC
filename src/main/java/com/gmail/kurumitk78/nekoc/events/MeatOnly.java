@@ -22,7 +22,7 @@ public class MeatOnly implements Listener
                     event.getPlayer().sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You cannot eat that silly kitty.");
                     event.setCancelled(true);
                 }
-                else if (myMat.equals("COD") || myMat.equals("SALMON") || myMat.equals("TROPICAL_FISH")) {
+                else if (myMat.equals("COD") || myMat.equals("SALMON") || myMat.equals("TROPICAL_FISH") || myMat.equals("RAW_FISH")) {
                     final Player p = event.getPlayer();
                     p.setFoodLevel(p.getFoodLevel() + 4);
                     p.setSaturation(p.getSaturation() + 9.4f);

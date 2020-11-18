@@ -35,3 +35,6 @@ UnedibleForCat:
   - BEETROOT
   - BEETROOT_SOUP
   - SWEET_BERRIES
+  - CARROT_ITEM #Theese three are only here for lower version compatibility reasons.
+  - POTATO_ITEM
+  - MELON

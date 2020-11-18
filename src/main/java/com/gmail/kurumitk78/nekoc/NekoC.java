@@ -37,7 +37,7 @@ public final class NekoC extends JavaPlugin {
         if (this.config.getBoolean("Purr")) {
             this.getCommand("Purr").setExecutor(new Purr());
         }
-        if (this.config.getBoolean("EarScratch")) {
+        if (this.config.getBoolean("Earscratch")) {
             this.getCommand("EarScratch").setExecutor(new EarScratch());
         }
         if (this.config.getBoolean("Attention")) {
