@@ -8,6 +8,14 @@ import org.bukkit.entity.*;
 public class Pet implements CommandExecutor
 {
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
+        if (args.length == 0) {
+            sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Invalid Input");
+            return false;
+        }
+        if (Bukkit.getPlayer(args[0]) == null) {
+            sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Invalid Input");
+            return false;
+        }
         if (sender.getName().equals(args[0])) {
             sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You cannot pet yourself.");
         }
