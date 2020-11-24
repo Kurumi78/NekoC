@@ -5,32 +5,26 @@ import org.bukkit.*;
 import com.gmail.kurumitk78.nekoc.NekoC;
 import org.bukkit.entity.*;
 
-public class Pet implements CommandExecutor
-{
+public class Pet implements CommandExecutor {
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
-        if (args.length == 0) {
-            sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Invalid Input");
-            return false;
-        }
-        if (Bukkit.getPlayer(args[0]) == null) {
+        if (args.length == 0 || Bukkit.getPlayer(args[0]) == null) {
             sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Invalid Input");
             return false;
         }
         if (sender.getName().equals(args[0])) {
             sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You cannot pet yourself.");
+            return true;
         }
-        else if (NekoC.isNeko(Bukkit.getPlayer(args[0]))) {
-            if (sender instanceof Player) {
-                if (NekoC.globalCommands) {
-                    Bukkit.broadcastMessage(ChatColor.GREEN + "[NekoC] " + ChatColor.LIGHT_PURPLE + ((Player)sender).getDisplayName() + ChatColor.LIGHT_PURPLE + " has pet " + Bukkit.getPlayer(args[0]).getDisplayName());
-                }
-                else {
-                    sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You have pet " + Bukkit.getPlayer(args[0]).getDisplayName());
-                    Bukkit.getPlayer(args[0]).sendMessage(ChatColor.GREEN + "[NekoC] " + ChatColor.YELLOW + ((Player)sender).getDisplayName() + ChatColor.LIGHT_PURPLE + " has pet you");
-                }
+        final Player target = Bukkit.getPlayer(args[0]);
+        if (NekoC.isNeko(target) && sender instanceof Player) {
+            final Player player = (Player) sender;
+            if (NekoC.globalCommands) {
+                Bukkit.broadcastMessage(ChatColor.GREEN + "[NekoC] " + ChatColor.LIGHT_PURPLE + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has pet " + target.getDisplayName());
+            } else {
+                sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You have pet " + target.getDisplayName());
+                target.sendMessage(ChatColor.GREEN + "[NekoC] " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has pet you");
             }
-        }
-        else {
+        } else {
             sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You can only pet a Neko!");
         }
         return true;
