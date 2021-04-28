@@ -5,25 +5,39 @@ import com.gmail.kurumitk78.nekoc.events.*;
 import com.gmail.kurumitk78.nekoc.commands.Hiss;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public final class NekoC extends JavaPlugin {
-    public FileConfiguration config = this.getConfig();
+    public FileConfiguration config;
     public static List<String> nekoListP;
     public static List<String> kittenListP;
     public static boolean globalCommands;
+    public static String prefix = "test";
 
 
     @Override
     public void onEnable() {
-        this.saveDefaultConfig();
+
+
+
+        if (!(new File(this.getDataFolder(), "config.yml").exists())) { // Generates the config if missing,
+            this.saveDefaultConfig();
+        }
+        config = this.getConfig();
+
+
+
+
+
         NekoC.globalCommands = config.getBoolean("GlobalCommandMessages");
         NekoC.nekoListP = config.getStringList("Nekos");
         NekoC.kittenListP = config.getStringList("Kittens");
@@ -58,13 +72,17 @@ public final class NekoC extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new MeatOnly(), this);
         }
 
+        prefix = ChatColor.translateAlternateColorCodes('&', config.getString("PluginPrefix"));
+
+
+        //Name to UUID conversion
         for(int i = 0; i < nekoListP.size(); i++){
             Bukkit.getLogger().info("Checking if " + nekoListP.get(0) );
             if (!nekoListP.get(i).matches("[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}")) {
                 Bukkit.getLogger().info("Is not UUID");
                 nekoListP.set(i, uuidConvert(nekoListP.get(i)));
             }
-            this.getConfig().set("Nekos", nekoListP);
+            config.set("Nekos", nekoListP);
             this.saveConfig();
         }
 
@@ -85,12 +103,7 @@ public final class NekoC extends JavaPlugin {
     }
     public static boolean isNeko(final Player p) {
         final String name = p.getUniqueId().toString();
-        return NekoC.nekoListP.contains(name) || isKitten(p);
-    }
-
-    public static boolean isKitten(final Player p) {
-        final String name = p.getName();
-        return NekoC.kittenListP.contains(name);
+        return NekoC.nekoListP.contains(name);
     }
 
     public static String uuidConvert(final String name) {

@@ -1,8 +1,5 @@
-Nekos:
-  - PlayerUserName
 
-Kittens:
-  - PlayerUserName
+PluginPrefix: "&a[NekoC]"
 
 NekoChat: true
 
@@ -38,3 +35,6 @@ UnedibleForCat:
   - CARROT_ITEM #Theese three are only here for lower version compatibility reasons.
   - POTATO_ITEM
   - MELON
+
+Nekos:
+  - PlayerUserName

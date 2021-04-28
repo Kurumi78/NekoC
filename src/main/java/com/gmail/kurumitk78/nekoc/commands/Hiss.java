@@ -11,7 +11,7 @@ public class Hiss implements CommandExecutor {
             return false;
         }
         if (args.length == 0 || Bukkit.getPlayer(args[0]) == null) {
-            sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Invalid Input");
+            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Invalid Input");
             return false;
         }
         final Player player = ((Player) sender).getPlayer();
@@ -20,10 +20,10 @@ public class Hiss implements CommandExecutor {
         }
         final Player target = Bukkit.getPlayer(args[0]);
         if (NekoC.globalCommands) {
-            Bukkit.broadcastMessage(ChatColor.GREEN + "[NekoC] " + ChatColor.LIGHT_PURPLE + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " is hissing at " + target.getName());
+            Bukkit.broadcastMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " is hissing at " + target.getName());
         } else {
-            player.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You have hissed at " + ChatColor.YELLOW + target.getDisplayName() + "!");
-            target.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You hear " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " hiss at you!");
+            player.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You have hissed at " + ChatColor.YELLOW + target.getDisplayName() + "!");
+            target.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You hear " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " hiss at you!");
         }
         return true;
     }

@@ -19,7 +19,7 @@ public class MeatOnly implements Listener
             if (event.getItem() != null) {
                 myMat = event.getItem().getType().toString();
                 if (MeatOnly.edibleForCat.contains(myMat)) {
-                    event.getPlayer().sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You cannot eat that.");
+                    event.getPlayer().sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You cannot eat that.");
                     event.setCancelled(true);
                 }
                 else if (myMat.equals("COD") || myMat.equals("SALMON") || myMat.equals("TROPICAL_FISH") || myMat.equals("RAW_FISH")) {

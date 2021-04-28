@@ -11,17 +11,17 @@ public class Scratch implements CommandExecutor {
             return false;
         }
         if (args.length == 0 || Bukkit.getPlayer(args[0]) == null) {
-            sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Invalid Input");
+            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Invalid Input");
             return false;
         }
         final Player player = (Player) sender;
         if (NekoC.isNeko(player)) {
             final Player target = Bukkit.getPlayer(args[0]);
             if (NekoC.globalCommands) {
-                Bukkit.broadcastMessage(ChatColor.GREEN + "[NekoC] " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has scratched " + ChatColor.YELLOW + target.getName() + ChatColor.LIGHT_PURPLE + " with sharp claws!");
+                Bukkit.broadcastMessage(NekoC.prefix + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has scratched " + ChatColor.YELLOW + target.getName() + ChatColor.LIGHT_PURPLE + " with sharp claws!");
             } else {
-                player.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You have scratched " + ChatColor.YELLOW + target.getDisplayName() + ChatColor.LIGHT_PURPLE + "!");
-                target.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You feel " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + "'s claws scratch you!");
+                player.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You have scratched " + ChatColor.YELLOW + target.getDisplayName() + ChatColor.LIGHT_PURPLE + "!");
+                target.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You feel " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + "'s claws scratch you!");
             }
         }
         return true;

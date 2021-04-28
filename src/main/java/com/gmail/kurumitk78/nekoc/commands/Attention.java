@@ -11,7 +11,7 @@ public class Attention implements CommandExecutor {
             return false;
         }
         if (args.length == 0 || Bukkit.getPlayer(args[0]) == null) {
-            sender.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " Invalid Input");
+            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Invalid Input");
             return false;
         }
         final Player player = (Player) sender;
@@ -20,10 +20,10 @@ public class Attention implements CommandExecutor {
         }
         final Player target = Bukkit.getPlayer(args[0]);
         if (NekoC.globalCommands) {
-            Bukkit.broadcastMessage(ChatColor.GREEN + "[NekoC] " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has tried to get the attention of " + ChatColor.YELLOW + target.getName());
+            Bukkit.broadcastMessage(NekoC.prefix + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has tried to get the attention of " + ChatColor.YELLOW + target.getName());
         } else {
-            player.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.LIGHT_PURPLE + " You have tried to get the attention of " + ChatColor.YELLOW + target.getName() + ChatColor.LIGHT_PURPLE + "!");
-            target.sendMessage(ChatColor.GREEN + "[NekoC]" + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " wants your attention!");
+            player.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You have tried to get the attention of " + ChatColor.YELLOW + target.getName() + ChatColor.LIGHT_PURPLE + "!");
+            target.sendMessage(NekoC.prefix + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " wants your attention!");
         }
         return true;
     }
