@@ -40,7 +40,6 @@ public final class NekoC extends JavaPlugin {
 
         NekoC.globalCommands = config.getBoolean("GlobalCommandMessages");
         NekoC.nekoListP = config.getStringList("Nekos");
-        NekoC.kittenListP = config.getStringList("Kittens");
         if (this.config.getBoolean("Pet")) {
             this.getCommand("Pet").setExecutor(new Pet());
         }
@@ -91,7 +90,7 @@ public final class NekoC extends JavaPlugin {
 
 
 
-        Bukkit.getPluginManager().registerEvents(new CatNip(), this);
+        //Bukkit.getPluginManager().registerEvents(new CatNip(), this);
         this.getCommand("nekotf").setExecutor(new NekoTF());
         int pluginId = 9164; // <-- Replace with the id of your plugin!
         Metrics metrics = new Metrics(this, pluginId);
