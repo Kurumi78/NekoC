@@ -70,6 +70,9 @@ public final class NekoC extends JavaPlugin {
         if (this.config.getBoolean("MeatOnly")) {
             Bukkit.getPluginManager().registerEvents(new MeatOnly(), this);
         }
+        if(this.config.getBoolean("Catnip")){
+            Bukkit.getPluginManager().registerEvents(new CatNip(),this);
+        }
 
         prefix = ChatColor.translateAlternateColorCodes('&', config.getString("PluginPrefix"));
 

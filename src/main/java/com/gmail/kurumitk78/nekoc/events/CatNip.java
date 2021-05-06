@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -19,10 +20,14 @@ public class CatNip implements Listener {
 
             if (NekoC.isNeko(event.getPlayer())){
                 Player p = event.getPlayer();
-                p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 15, 2));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 15, 30));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 15, 5));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 10, 1));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW, 15*20, 2));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, 15*20, 30));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, 15*20, 5));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 10*20, 1));
+
+                ItemStack newNip = p.getInventory().getItemInMainHand();
+                newNip.setAmount(newNip.getAmount()-1);
+                p.getInventory().setItemInMainHand(newNip);
                 p.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Catnip Consumed!");
                 return;
 
