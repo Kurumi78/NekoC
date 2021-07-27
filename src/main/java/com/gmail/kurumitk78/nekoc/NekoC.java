@@ -19,7 +19,6 @@ import java.util.List;
 public final class NekoC extends JavaPlugin {
     public FileConfiguration config;
     public static List<String> nekoListP;
-    public static List<String> kittenListP;
     public static boolean globalCommands;
     public static String prefix = "test";
 
