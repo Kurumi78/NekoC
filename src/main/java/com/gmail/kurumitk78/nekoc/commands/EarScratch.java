@@ -22,7 +22,7 @@ public class EarScratch implements CommandExecutor {
             if (NekoC.globalCommands) {
                 Bukkit.broadcastMessage(NekoC.prefix + ChatColor.YELLOW + PlayerName + ChatColor.LIGHT_PURPLE + " has scratched behind the ear of " + player.getDisplayName());
             } else {
-                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You have scratched " + ChatColor.YELLOW + player + ChatColor.LIGHT_PURPLE + " behind the ear");
+                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You have scratched " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " behind the ear");
                 player.sendMessage(NekoC.prefix + ChatColor.YELLOW + PlayerName + ChatColor.LIGHT_PURPLE + " has Scratched you behind the ear");
             }
         } else {
