@@ -39,14 +39,14 @@ public final class NekoC extends JavaPlugin {
 
         NekoC.globalCommands = config.getBoolean("GlobalCommandMessages");
         NekoC.nekoListP = config.getStringList("Nekos");
-        if (this.config.getBoolean("Pet")) {
-            this.getCommand("Pet").setExecutor(new Pet());
+        if (this.config.getBoolean("Pat")) {
+            this.getCommand("Pat").setExecutor(new Pat());
         }
         if (this.config.getBoolean("Lovebite")) {
             this.getCommand("Lovebite").setExecutor(new Lovebite());
         }
         if (this.config.getBoolean("Nightvision")) {
-            this.getCommand("nightvision").setExecutor(new Nightvision());
+            this.getCommand("Nightvision").setExecutor(new Nightvision());
         }
         if (this.config.getBoolean("Purr")) {
             this.getCommand("Purr").setExecutor(new Purr());
@@ -55,13 +55,13 @@ public final class NekoC extends JavaPlugin {
             this.getCommand("EarScratch").setExecutor(new EarScratch());
         }
         if (this.config.getBoolean("Attention")) {
-            this.getCommand("attention").setExecutor(new Attention());
+            this.getCommand("Attention").setExecutor(new Attention());
         }
         if (this.config.getBoolean("Hiss")) {
-            this.getCommand("hiss").setExecutor(new Hiss());
+            this.getCommand("Hiss").setExecutor(new Hiss());
         }
         if (this.config.getBoolean("Scratch")) {
-            this.getCommand("scratch").setExecutor(new Scratch());
+            this.getCommand("Scratch").setExecutor(new Scratch());
         }
         if (this.config.getBoolean("NekoChat")) {
             Bukkit.getPluginManager().registerEvents(new NekoChat(), this);
