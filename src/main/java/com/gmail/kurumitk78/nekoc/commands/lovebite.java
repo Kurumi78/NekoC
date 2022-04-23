@@ -15,7 +15,7 @@ public class lovebite implements CommandExecutor {
             return false;
         }
         if (NekoC.isNeko(Bukkit.getPlayer(args[0]))) {
-            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Nekos cant lovebite another neko!");
+            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Nekos can't lovebite another neko!");
         } else {
             final Player p = (Player) sender;
             final String PlayerName = p.getName();
