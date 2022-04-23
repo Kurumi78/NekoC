@@ -17,14 +17,14 @@ public class Nightvision implements CommandExecutor {
             if (args.length == 0) {
                 sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " On or off?");
             } else if ("on".equalsIgnoreCase(args[0])) {
-                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Nightvision Activated!");
+                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Night vision activated!");
                 player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 199980, 2));
             } else if ("off".equalsIgnoreCase(args[0])) {
-                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Nightvision Deactivated!");
+                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Night vision deactivated!");
                 player.removePotionEffect(PotionEffectType.NIGHT_VISION);
             }
         } else {
-            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Only Nekos have Nightvision!");
+            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Only Nekos have night vision!");
         }
         return true;
     }
