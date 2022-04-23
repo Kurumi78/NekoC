@@ -13,7 +13,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public final class NekoC extends JavaPlugin {
@@ -95,7 +94,7 @@ public final class NekoC extends JavaPlugin {
         //Bukkit.getPluginManager().registerEvents(new CatNip(), this);
         this.getCommand("nekotf").setExecutor(new NekoTF());
         int pluginId = 9164; // <-- Replace with the id of your plugin!
-        Metrics metrics = new Metrics(this, pluginId);
+        Metrics metrics = new Metrics(this, pluginId); //This doesn't appear to be used!
     }
 
     @Override
@@ -109,7 +108,7 @@ public final class NekoC extends JavaPlugin {
 
     public static String uuidConvert(final String name) {
         Bukkit.getLogger().info("Converting" + name + "toUUID");
-        OfflinePlayer p = Bukkit.getOfflinePlayer(name);
+        OfflinePlayer p = Bukkit.getOfflinePlayer(name); //Deprecated! Persistent storage of users should be by UUID as names are no longer unique past a single session
         return p.getUniqueId().toString();
 
     }
