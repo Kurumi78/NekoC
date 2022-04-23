@@ -43,7 +43,7 @@ public final class NekoC extends JavaPlugin {
             this.getCommand("Pet").setExecutor(new Pet());
         }
         if (this.config.getBoolean("Lovebite")) {
-            this.getCommand("Lovebite").setExecutor(new lovebite());
+            this.getCommand("Lovebite").setExecutor(new Lovebite());
         }
         if (this.config.getBoolean("Nightvision")) {
             this.getCommand("nightvision").setExecutor(new Nightvision());

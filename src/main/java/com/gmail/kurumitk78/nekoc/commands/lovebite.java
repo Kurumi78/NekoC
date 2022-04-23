@@ -5,7 +5,7 @@ import org.bukkit.entity.*;
 import com.gmail.kurumitk78.nekoc.NekoC;
 import org.bukkit.*;
 
-public class lovebite implements CommandExecutor {
+public class Lovebite implements CommandExecutor {
     public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
         if (!(sender instanceof Player)) {
             return false;
