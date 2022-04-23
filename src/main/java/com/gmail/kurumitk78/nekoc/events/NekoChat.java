@@ -27,10 +27,10 @@ public class NekoChat implements Listener
             msg = msg.replace("huh", "nya");
             msg = msg.replace("meow", "nya");
             msg = msg.replace("Meow", "Nya");
-            msg = msg.replace("honyey", "honey");
-            msg = msg.replace("evernyunye", "everyonye");
-            msg = msg.replace("Honyey", "Honey");
-            msg = msg.replace("Evernyunye", "Everyonye");
+            msg = msg.replace("honey", "honyey");
+            msg = msg.replace("everyonye", "evernyunye");
+            msg = msg.replace("Honey", "Honyey");
+            msg = msg.replace("Everyonye", "Evernyunye");
             if (msg.equalsIgnoreCase("yay") || msg.equalsIgnoreCase("yay!")) {
                 msg = "Nya!";
             }
