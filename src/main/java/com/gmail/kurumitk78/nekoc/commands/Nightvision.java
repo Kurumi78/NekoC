@@ -1,5 +1,6 @@
 package com.gmail.kurumitk78.nekoc.commands;
 
+import com.gmail.kurumitk78.nekoc.Config;
 import com.gmail.kurumitk78.nekoc.NekoC;
 import org.bukkit.command.*;
 import org.bukkit.entity.*;
@@ -15,16 +16,16 @@ public class Nightvision implements CommandExecutor {
         final Player player = (Player) sender;
         if (NekoC.isNeko(player)) {
             if (args.length == 0) {
-                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " On or off?");
+                sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " On or off?");
             } else if ("on".equalsIgnoreCase(args[0])) {
-                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Night vision activated!");
+                sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Night vision activated!");
                 player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 199980, 2));
             } else if ("off".equalsIgnoreCase(args[0])) {
-                sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Night vision deactivated!");
+                sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Night vision deactivated!");
                 player.removePotionEffect(PotionEffectType.NIGHT_VISION);
             }
         } else {
-            sender.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Only Nekos have night vision!");
+            sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Only Nekos have night vision!");
         }
         return true;
     }

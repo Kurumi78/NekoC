@@ -1,5 +1,6 @@
 package com.gmail.kurumitk78.nekoc.events;
 
+import com.gmail.kurumitk78.nekoc.Config;
 import com.gmail.kurumitk78.nekoc.NekoC;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -28,7 +29,7 @@ public class CatNip implements Listener {
                 ItemStack newNip = p.getInventory().getItemInMainHand();
                 newNip.setAmount(newNip.getAmount()-1);
                 p.getInventory().setItemInMainHand(newNip);
-                p.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Catnip Consumed!");
+                p.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Catnip Consumed!");
 
 
             }
