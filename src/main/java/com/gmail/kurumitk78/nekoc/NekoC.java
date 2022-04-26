@@ -19,7 +19,7 @@ public final class NekoC extends JavaPlugin {
         Config.setConfigDirectory(this.getDataFolder().getAbsolutePath());
         Config.reloadConfigs();
 
-        if (Config.pat) {
+        if (Config.Pat) {
             this.getCommand("Pat").setExecutor(new Pat());
         }
         if (Config.Lovebite) {

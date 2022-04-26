@@ -17,7 +17,7 @@ public class Config {
     public static boolean NekoChat;
     public static boolean MeatOnly;
     public static boolean Catnip;
-    public static boolean pat;
+    public static boolean Pat;
     public static boolean Lovebite;
     public static boolean Nightvision;
     public static boolean Purr;
@@ -85,7 +85,7 @@ public class Config {
          NekoChat = mainConfig.getBoolean("NekoChat");
          MeatOnly = mainConfig.getBoolean("MeatOnly");
          Catnip = mainConfig.getBoolean("Catnip");
-         pat = mainConfig.getBoolean("pat");
+         Pat = mainConfig.getBoolean("Pat");
          Lovebite = mainConfig.getBoolean("Lovebite");
          Nightvision = mainConfig.getBoolean("Nightvision");
          Purr = mainConfig.getBoolean("Purr");

@@ -20,10 +20,10 @@ public class Pat implements CommandExecutor {
         if (NekoC.isNeko(target) && sender instanceof Player) {
             final Player player = (Player) sender;
             if (Config.GlobalCommandMessages) {
-                Bukkit.broadcastMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has pet " + target.getDisplayName());
+                Bukkit.broadcastMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has pat " + target.getDisplayName());
             } else {
-                sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have pet " + target.getDisplayName());
-                target.sendMessage(Config.PluginPrefix + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has pet you");
+                sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have pat " + target.getDisplayName());
+                target.sendMessage(Config.PluginPrefix + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has pat you");
             }
         } else {
             sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You can only pat a Neko!");
