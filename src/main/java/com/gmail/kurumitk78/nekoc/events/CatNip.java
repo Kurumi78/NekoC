@@ -29,7 +29,6 @@ public class CatNip implements Listener {
                 newNip.setAmount(newNip.getAmount()-1);
                 p.getInventory().setItemInMainHand(newNip);
                 p.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Catnip Consumed!");
-                return;
 
 
             }
