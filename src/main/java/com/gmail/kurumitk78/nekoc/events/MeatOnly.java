@@ -10,7 +10,7 @@ import org.bukkit.event.*;
 
 public class MeatOnly implements Listener
 {
-    public static ArrayList<String> edibleForCat = (ArrayList<String>) Bukkit.getPluginManager().getPlugin("NekoC").getConfig().getList("UnedibleForCat");
+    public static ArrayList<String> edibleForCat = (ArrayList<String>) Bukkit.getPluginManager().getPlugin("NekoC").getConfig().getList("UnedibleForCat"); //Unchecked cast from List<capture#1-of ?> to ArrayList<String>
 
     @EventHandler
     public void onPlayerInteract(final PlayerItemConsumeEvent event) {

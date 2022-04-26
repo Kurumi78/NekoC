@@ -25,7 +25,7 @@ public class Hiss implements CommandExecutor {
                 target.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " You hear " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " hiss at you!");
             }
         }
-        else{player.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Only Neko's can hiss" + "!");}
+        else{player.sendMessage(NekoC.prefix + ChatColor.LIGHT_PURPLE + " Only Nekos can hiss" + "!");}
 
         return true;
     }

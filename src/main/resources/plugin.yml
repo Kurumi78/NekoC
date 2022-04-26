@@ -5,10 +5,10 @@ prefix: NekoC
 authors: [ Kurumi78 ]
 
 commands:
-  earscratch:
-  lovebite:
+  EarScratch:
+  Lovebite:
   Nightvision:
-  Pet:
+  Pat:
   Purr:
   NekoTF:
   Attention:
