@@ -21,11 +21,16 @@ public class Lovebite implements CommandExecutor {
             final Player p = (Player) sender;
             final String PlayerName = p.getName();
             final Player player = Bukkit.getPlayer(args[0]);
-            if (Config.GlobalCommandMessages) {
-                Bukkit.broadcastMessage(Config.PluginPrefix + ChatColor.YELLOW + p.getDisplayName() + ChatColor.LIGHT_PURPLE + " has lightly bit the finger of " + ChatColor.YELLOW + player.getName());
-            } else {
-                sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You lightly bite the finger of " + ChatColor.YELLOW + args[0] + ChatColor.LIGHT_PURPLE + " to show them how much you love them.");
-                player.sendMessage(Config.PluginPrefix + ChatColor.YELLOW + " You feel a sharp set of teeth softly bite your finger, then see" + ChatColor.YELLOW + PlayerName + ChatColor.LIGHT_PURPLE + " looking up at you.");
+            if (NekoC.isNeko(p)) {
+                if (Config.GlobalCommandMessages) {
+                    Bukkit.broadcastMessage(Config.PluginPrefix  + " "+ ChatColor.YELLOW + p.getDisplayName() + ChatColor.LIGHT_PURPLE + " has lightly bit the finger of " + ChatColor.YELLOW + player.getName());
+                } else {
+                    sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You lightly bite the finger of " + ChatColor.YELLOW + args[0] + ChatColor.LIGHT_PURPLE + " to show them how much you love them.");
+                    player.sendMessage(Config.PluginPrefix + ChatColor.YELLOW + " You feel a sharp set of teeth softly bite your finger, then see" + ChatColor.YELLOW + PlayerName + ChatColor.LIGHT_PURPLE + " looking up at you.");
+                }
+            }
+            else{
+                sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Only Neko's can lovebite!");
             }
         }
         return true;
