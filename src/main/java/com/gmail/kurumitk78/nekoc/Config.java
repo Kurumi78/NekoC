@@ -35,7 +35,7 @@ public class Config {
     private static YamlConfiguration nekoListConfig = null;
 
 
-    private static final String mainConfigFileName = "/Config.yml"; //Set the name of the Main Config file
+    private static final String mainConfigFileName = "/config.yml"; //Set the name of the Main Config file
     private static final String nekoListConfigFileName = "/NekoList.yml";
 
 
@@ -59,7 +59,7 @@ public class Config {
         mainConfig  = new YamlConfiguration();
         nekoListConfig = new YamlConfiguration();
 
-        // defaultConfigs();
+        defaultConfigs();
 
         try{
             mainConfig.load(configDirectory + mainConfigFileName); //Load the config from disk
@@ -132,10 +132,12 @@ public class Config {
             }
         }
 
-        if(nekoListConfig.get("Nekos").toString().length()== 0){
+        try{
+         nekoListConfig.get("Nekos"); //This is dumb
+        }
+        catch(Exception error){
             nekoListConfig.set("Nekos", Arrays.asList("Kurumi78"));
         }
-
 
     }
     public static String uuidConvert(final String name) {
