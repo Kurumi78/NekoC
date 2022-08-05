@@ -1,5 +1,6 @@
 package com.gmail.kurumitk78.nekoc;
 
+import jdk.jfr.internal.LogLevel;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -8,6 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.logging.Level;
 
 public class Config {
 
@@ -43,10 +45,10 @@ public class Config {
         Config.configDirectory = configDirectory;
     }
 
-    public static void saveAll() { //This method saves all config files
+    public static void saveAll() { //This method saves the Nekolist config file
         try{
             nekoListConfig.set("Nekos", NekoList);
-            mainConfig.save(configDirectory + mainConfigFileName); //Save the config file
+           // mainConfig.save(configDirectory + mainConfigFileName); //Save the  main config file
             nekoListConfig.save(configDirectory + nekoListConfigFileName);
 
         } catch(IOException e){ //catches if the config file doesnt exist. Figure out why you print the stack trace manually.
@@ -54,12 +56,12 @@ public class Config {
         }
     }
 
-    public static void reloadConfigs(){
+    public static void reloadConfigs() throws IOException {
 
         mainConfig  = new YamlConfiguration();
         nekoListConfig = new YamlConfiguration();
 
-        defaultConfigs();
+        // defaultConfigs();
 
         try{
             mainConfig.load(configDirectory + mainConfigFileName); //Load the config from disk
@@ -71,6 +73,7 @@ public class Config {
         }
 
         if(mainConfig.get("ConfigVersion") == null){
+            Bukkit.getLogger().log(Level.INFO, "Updating config");
             NekoList = new ArrayList<String>(mainConfig.getStringList("Nekos"));
             mainConfig.set("Nekos", null);
             nekoListConfig.set("Nekos", NekoList);
@@ -78,7 +81,7 @@ public class Config {
             mainConfig.set("UnedibleForCat", null);
             mainConfig.set("InedibleForCat", inedibleForCat);
             mainConfig.set("ConfigVersion", 1.0);
-            Config.saveAll();
+            mainConfig.save(configDirectory + mainConfigFileName);
         }
 
          PluginPrefix = ChatColor.translateAlternateColorCodes('&', mainConfig.getString("PluginPrefix"));
@@ -106,7 +109,7 @@ public class Config {
 
 
     }
-
+/*
     private static void defaultConfigs(){
 
         HashMap <String, Object > defaults = new HashMap<>(); //Create a hashmap for the defaults
@@ -138,8 +141,7 @@ public class Config {
         catch(Exception error){
             nekoListConfig.set("Nekos", Arrays.asList("Kurumi78"));
         }
-
-    }
+    } */
     public static String uuidConvert(final String name) {
         Bukkit.getLogger().info("Converting" + name + "toUUID");
         OfflinePlayer p = Bukkit.getOfflinePlayer(name); //Yes the method is depreciated. It's fine in this use case, im not using it to store data, just converting the player name to UUID.

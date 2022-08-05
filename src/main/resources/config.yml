@@ -1,5 +1,4 @@
-
-PluginPrefix: "&a[NekoC]"
+PluginPrefix: '&a[NekoC]'
 
 NekoChat: true
 
@@ -17,8 +16,7 @@ Hiss: true
 Scratch: true
 
 GlobalCommandMessages: false
-
-UnedibleForCat:
+InedibleForCat:
   - APPLE
   - MUSHROOM_STEW
   - BREAD
@@ -34,6 +32,7 @@ UnedibleForCat:
   - BEETROOT
   - BEETROOT_SOUP
   - SWEET_BERRIES
-  - CARROT_ITEM #Theese three are only here for lower version compatibility reasons.
+  - CARROT_ITEM
   - POTATO_ITEM
   - MELON
+ConfigVersion: 1.0

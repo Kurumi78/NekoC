@@ -9,6 +9,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.IOException;
+
 
 public final class NekoC extends JavaPlugin {
 
@@ -16,8 +18,13 @@ public final class NekoC extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        this.saveDefaultConfig();
         Config.setConfigDirectory(this.getDataFolder().getAbsolutePath());
-        Config.reloadConfigs();
+        try {
+            Config.reloadConfigs();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         if (Config.Pat) {
             this.getCommand("Pat").setExecutor(new Pat());
