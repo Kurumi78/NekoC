@@ -30,7 +30,7 @@ public class NekoTF implements CommandExecutor {
                 if (!NekoC.isNeko(commandTarget)) {
                     NekoList.add(Bukkit.getPlayer(args[0]).getUniqueId().toString());
                     Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", NekoList);
-                    commandSender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Made " + ChatColor.YELLOW + commandTarget.getDisplayName() + " a neko!");
+                    commandSender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Made " + ChatColor.YELLOW + commandTarget.getDisplayName() + ChatColor.LIGHT_PURPLE + " a neko!");
                 } else {
                     NekoList.remove(Bukkit.getPlayer(args[0]).getUniqueId().toString());
                     Bukkit.getPluginManager().getPlugin("NekoC").getConfig().set("Nekos", NekoList);
