@@ -35,6 +35,9 @@ public final class NekoC extends JavaPlugin {
         if (Config.Nightvision) {
             this.getCommand("Nightvision").setExecutor(new Nightvision());
         }
+        if (Config.Jumpboost) {
+            this.getCommand("Jumpboost").setExecutor(new Jumpboost());
+        }
         if (Config.Purr) {
             this.getCommand("Purr").setExecutor(new Purr());
         }

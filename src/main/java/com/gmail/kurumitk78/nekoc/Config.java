@@ -22,6 +22,8 @@ public class Config {
     public static boolean Pat;
     public static boolean Lovebite;
     public static boolean Nightvision;
+
+    public static boolean Jumpboost;
     public static boolean Purr;
     public static boolean Earscratch;
     public static boolean Attention;
@@ -83,6 +85,10 @@ public class Config {
             mainConfig.set("ConfigVersion", 1.0);
             mainConfig.save(configDirectory + mainConfigFileName);
         }
+        if(mainConfig.get("ConfigVersion") == "1.0"){
+            Jumpboost = true;
+            mainConfig.set("ConfigVersion", "1.1");
+        }
 
          PluginPrefix = ChatColor.translateAlternateColorCodes('&', mainConfig.getString("PluginPrefix"));
          NekoChat = mainConfig.getBoolean("NekoChat");
@@ -91,6 +97,7 @@ public class Config {
          Pat = mainConfig.getBoolean("Pat");
          Lovebite = mainConfig.getBoolean("Lovebite");
          Nightvision = mainConfig.getBoolean("Nightvision");
+         Jumpboost = mainConfig.getBoolean("Jumpboost");
          Purr = mainConfig.getBoolean("Purr");
          Earscratch = mainConfig.getBoolean("Earscratch");
          Attention = mainConfig.getBoolean("Attention");

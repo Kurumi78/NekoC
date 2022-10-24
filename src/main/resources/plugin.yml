@@ -3,11 +3,13 @@ version: ${project.version}
 main: com.gmail.kurumitk78.nekoc.NekoC
 prefix: NekoC
 authors: [ Kurumi78 ]
+api-version: 1.19
 
 commands:
   EarScratch:
   Lovebite:
   Nightvision:
+  Jumpboost:
   Pat:
   Purr:
   NekoTF:

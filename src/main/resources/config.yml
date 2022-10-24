@@ -9,6 +9,7 @@ Catnip: true
 Pat: true
 Lovebite: true
 Nightvision: true
+Jumpboost: true
 Purr: true
 Earscratch: true
 Attention: true
@@ -35,4 +36,4 @@ InedibleForCat:
   - CARROT_ITEM
   - POTATO_ITEM
   - MELON
-ConfigVersion: 1.0
+ConfigVersion: 1.1
