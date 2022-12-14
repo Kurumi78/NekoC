@@ -15,6 +15,7 @@ Earscratch: true
 Attention: true
 Hiss: true
 Scratch: true
+SwiftSneak: true
 
 GlobalCommandMessages: false
 InedibleForCat:
@@ -36,4 +37,4 @@ InedibleForCat:
   - CARROT_ITEM
   - POTATO_ITEM
   - MELON
-ConfigVersion: 1.1
+ConfigVersion: 1.2

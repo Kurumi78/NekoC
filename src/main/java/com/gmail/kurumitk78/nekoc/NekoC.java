@@ -62,7 +62,10 @@ public final class NekoC extends JavaPlugin {
         if(Config.Catnip){
             Bukkit.getPluginManager().registerEvents(new CatNip(),this);
         }
-
+        if(Config.Swiftsneak) {
+            this.getCommand("SwiftSneak").setExecutor(new SwiftSneak());
+            Bukkit.getPluginManager().registerEvents(new ArmorEvent(), this);
+        }
 
 
 

@@ -24,6 +24,8 @@ public class Config {
     public static boolean Nightvision;
 
     public static boolean Jumpboost;
+
+    public static boolean Swiftsneak;
     public static boolean Purr;
     public static boolean Earscratch;
     public static boolean Attention;
@@ -75,7 +77,7 @@ public class Config {
         }
 
         if(mainConfig.get("ConfigVersion") == null){
-            Bukkit.getLogger().log(Level.INFO, "Updating config");
+            Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.0");
             NekoList = new ArrayList<String>(mainConfig.getStringList("Nekos"));
             mainConfig.set("Nekos", null);
             nekoListConfig.set("Nekos", NekoList);
@@ -85,9 +87,12 @@ public class Config {
             mainConfig.set("ConfigVersion", 1.0);
             mainConfig.save(configDirectory + mainConfigFileName);
         }
-        if(mainConfig.get("ConfigVersion") == "1.0"){
-            Jumpboost = true;
-            mainConfig.set("ConfigVersion", "1.1");
+        if(mainConfig.get("ConfigVersion").equals(1.0)){
+            Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.1");
+            mainConfig.set("Jumpboost", true);
+            mainConfig.set("SwiftSneak", true);
+            mainConfig.set("ConfigVersion", 1.1);
+            mainConfig.save(configDirectory + mainConfigFileName);
         }
 
          PluginPrefix = ChatColor.translateAlternateColorCodes('&', mainConfig.getString("PluginPrefix"));
@@ -98,6 +103,7 @@ public class Config {
          Lovebite = mainConfig.getBoolean("Lovebite");
          Nightvision = mainConfig.getBoolean("Nightvision");
          Jumpboost = mainConfig.getBoolean("Jumpboost");
+         Swiftsneak = mainConfig.getBoolean("SwiftSneak");
          Purr = mainConfig.getBoolean("Purr");
          Earscratch = mainConfig.getBoolean("Earscratch");
          Attention = mainConfig.getBoolean("Attention");
