@@ -3,7 +3,7 @@ version: ${project.version}
 main: com.gmail.kurumitk78.nekoc.NekoC
 prefix: NekoC
 authors: [ Kurumi78 ]
-api-version: 1.19
+api-version: 1.13
 
 commands:
   EarScratch:

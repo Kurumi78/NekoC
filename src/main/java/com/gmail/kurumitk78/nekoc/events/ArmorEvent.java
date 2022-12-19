@@ -14,8 +14,8 @@ public class ArmorEvent implements Listener {
 
     @EventHandler
     public void ArmorChange(final InventoryClickEvent event){
-        if(event.getCursor() != null && event.getWhoClicked() instanceof Player){  //Todo, not this
-            ItemStack movedItem = event.getCursor();
+        if(event.getCurrentItem() != null && event.getWhoClicked() instanceof Player){  //Todo, not this
+            ItemStack movedItem = event.getCurrentItem();
             if(movedItem.hasItemMeta()){
                 if(movedItem.getItemMeta().hasLore()){
                     if(movedItem.getItemMeta().getLore().contains("§dEnhanced by Catlike Agility")){
@@ -25,8 +25,8 @@ public class ArmorEvent implements Listener {
                         movedMeta.setLore(movedLore);
                         movedItem.setItemMeta(movedMeta);
                         movedItem.removeEnchantment(Enchantment.SWIFT_SNEAK);
-                        event.setCursor(movedItem);
-                        //((Player)event.getWhoClicked()).updateInventory();
+                        event.setCurrentItem(movedItem);
+
                     }
                 }
             }

@@ -64,18 +64,14 @@ public final class NekoC extends JavaPlugin {
         }
         if(Config.Swiftsneak) {
             this.getCommand("SwiftSneak").setExecutor(new SwiftSneak());
+            Bukkit.getPluginManager().registerEvents(new ArmorEvent2(), this);
             Bukkit.getPluginManager().registerEvents(new ArmorEvent(), this);
         }
 
 
-
-
-
-
-
-
-        //Bukkit.getPluginManager().registerEvents(new CatNip(), this);
         this.getCommand("nekotf").setExecutor(new NekoTF());
+
+
         int pluginId = 9164; // <-- Replace with the id of your plugin!
         Metrics metrics = new Metrics(this, pluginId); //This doesn't appear to be used!
     }

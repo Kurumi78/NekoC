@@ -18,29 +18,27 @@ import java.util.List;
 public class SwiftSneak implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        ItemStack boots = ((Player)commandSender).getInventory().getBoots();
+        ItemStack pants = ((Player)commandSender).getInventory().getLeggings();
 
-        if(boots != null){
-            ItemMeta bootMeta = boots.getItemMeta();
-            if(boots.getItemMeta().hasEnchant(Enchantment.SWIFT_SNEAK)){
+        if(pants != null){
+            ItemMeta pantsMeta = pants.getItemMeta();
+            if(pants.getItemMeta().hasEnchant(Enchantment.SWIFT_SNEAK)){
                 commandSender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You already have the SwiftSneak enchantment, your catlike agility does nothing.");
             }
             else{
                 List<String> loreList = new ArrayList<String>();
-                if(bootMeta.hasLore()) {
-                    loreList = bootMeta.getLore();
+                if(pantsMeta.hasLore()) {
+                    loreList = pantsMeta.getLore();
                 }
                 loreList.add("§dEnhanced by Catlike Agility");
-                bootMeta.setLore(loreList);
-                boots.setItemMeta(bootMeta);
-                boots.addUnsafeEnchantment(Enchantment.SWIFT_SNEAK, 3);
+                pantsMeta.setLore(loreList);
+                pants.setItemMeta(pantsMeta);
+                pants.addUnsafeEnchantment(Enchantment.SWIFT_SNEAK, 3);
                 commandSender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have started sneaking with your catlike agility");
-                //((Player)commandSender).getInventory().setBoots(boots);
-                //((Player)commandSender).updateInventory();
             }
         }
         else{
-            commandSender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You feel a small rock jab into your foot, try putting some boots on before sneaking to avoid this.");
+            commandSender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You feel uncomfortable trying to sneak around without pants on.");
 
         }
 
