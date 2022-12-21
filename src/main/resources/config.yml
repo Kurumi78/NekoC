@@ -16,6 +16,12 @@ Attention: true
 Hiss: true
 Scratch: true
 SwiftSneak: true
+Claws: true
+
+Claw Poison Level: 1
+Claw Poison Duration: 10
+Claw Poison Chance: 25
+Claw Damage: 1
 
 GlobalCommandMessages: false
 InedibleForCat:

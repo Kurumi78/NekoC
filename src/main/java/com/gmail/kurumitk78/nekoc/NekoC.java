@@ -67,6 +67,7 @@ public final class NekoC extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new ArmorEvent2(), this);
             Bukkit.getPluginManager().registerEvents(new ArmorEvent(), this);
         }
+        Bukkit.getPluginManager().registerEvents(new Claws(), this);
 
 
         this.getCommand("nekotf").setExecutor(new NekoTF());

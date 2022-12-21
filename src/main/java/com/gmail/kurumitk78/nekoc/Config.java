@@ -26,6 +26,16 @@ public class Config {
     public static boolean Jumpboost;
 
     public static boolean Swiftsneak;
+
+    public static boolean Claws;
+
+    public static int ClawPoisonLevel;
+
+    public static int ClawPoisonDuration;
+
+    public static int ClawPoisonChance;
+
+    public static double ClawDamage;
     public static boolean Purr;
     public static boolean Earscratch;
     public static boolean Attention;
@@ -94,6 +104,15 @@ public class Config {
             mainConfig.set("ConfigVersion", 1.1);
             mainConfig.save(configDirectory + mainConfigFileName);
         }
+        if(mainConfig.get("ConfigVersion").equals(1.1)) {Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.1");mainConfig.set("Claws", true);
+        mainConfig.set("Claw Poison Level", 1);
+        mainConfig.set("Claw Poison Duration", 10);
+        mainConfig.set("Claw Poison Chance", 25);
+        mainConfig.set("Claw Damage", 1);
+        mainConfig.set("ConfigVersion", 1.2);
+        mainConfig.save(configDirectory + mainConfigFileName);
+        }
+
 
          PluginPrefix = ChatColor.translateAlternateColorCodes('&', mainConfig.getString("PluginPrefix"));
          NekoChat = mainConfig.getBoolean("NekoChat");
@@ -109,6 +128,11 @@ public class Config {
          Attention = mainConfig.getBoolean("Attention");
          Hiss = mainConfig.getBoolean("Hiss");
          Scratch = mainConfig.getBoolean("Scratch");
+         Claws = mainConfig.getBoolean("Claws");
+         ClawPoisonLevel = mainConfig.getInt("Claw Poison Level");
+         ClawPoisonDuration = mainConfig.getInt("Claw Poison Duration");
+         ClawPoisonChance = mainConfig.getInt("Claw Poison Chance");
+         ClawDamage = mainConfig.getDouble("Claw Damage");
          GlobalCommandMessages = mainConfig.getBoolean("GlobalCommandMessages");
          NekoList =  new ArrayList<String>(nekoListConfig.getStringList("Nekos"));
          inedibleForCat = new ArrayList<String>(mainConfig.getStringList("InedibleForCat"));
@@ -119,42 +143,7 @@ public class Config {
                 NekoList.set(i, uuidConvert(NekoList.get(i)));
             }
         }
-
-
     }
-/*
-    private static void defaultConfigs(){
-
-        HashMap <String, Object > defaults = new HashMap<>(); //Create a hashmap for the defaults
-        defaults.put("PluginPrefix", "&a[NekoC]"); //add the defaults to the hashmap
-        defaults.put("NekoChat", true);
-        defaults.put("MeatOnly", true);
-        defaults.put("Catnip", true);
-        defaults.put("Pat", true);
-        defaults.put("Lovebite", true);
-        defaults.put("NightVision", true);
-        defaults.put("Purr", true);
-        defaults.put("EarScratch", true);
-        defaults.put("Attention", true);
-        defaults.put("Hiss", true);
-        defaults.put("Scratch", true);
-        defaults.put("GlobalCommandMessages", true);
-        defaults.put("InedibleForCat", Arrays.asList("Apple", "MUSHROOM_STEW","BREAD", "GOLDEN_APPLE", "ENCHANTED_GOLDEN_APPLE", "MELON_SLICE","DRIED_KELP","CARROT","POTATO","BAKED_POTATO","POISONOUS_POTATO","PUMPKIN_PIE","BEETROOT","BEETROOT_SOUP","SWEET_BERRIES","CARROT_ITEM","POTATO_ITEM","MELON"));
-
-        for (Map.Entry <String, Object> entry:defaults.entrySet()){
-
-            if(mainConfig.get(entry.getKey()) == null){ //Try to get a value from the current entry key, continue if null
-                mainConfig.set(entry.getKey(), entry.getValue()); //Gets the value from the hashmap of defaults and adds it to the config in memory
-            }
-        }
-
-        try{
-         nekoListConfig.get("Nekos"); //This is dumb
-        }
-        catch(Exception error){
-            nekoListConfig.set("Nekos", Arrays.asList("Kurumi78"));
-        }
-    } */
     public static String uuidConvert(final String name) {
         Bukkit.getLogger().info("Converting" + name + "toUUID");
         OfflinePlayer p = Bukkit.getOfflinePlayer(name); //Yes the method is depreciated. It's fine in this use case, im not using it to store data, just converting the player name to UUID.
