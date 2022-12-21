@@ -25,6 +25,7 @@ public class Hiss implements CommandExecutor {
                 player.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have hissed at " + ChatColor.YELLOW + target.getDisplayName() + "!");
                 target.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You hear " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " hiss at you!");
             }
+            player.getWorld().playSound(player.getLocation(), Sound.ENTITY_CAT_HISS, 0.3F, 1);
         }
         else{player.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " Only Nekos can hiss" + "!");}
 

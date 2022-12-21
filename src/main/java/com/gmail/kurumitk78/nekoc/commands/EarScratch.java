@@ -26,6 +26,7 @@ public class EarScratch implements CommandExecutor {
                 sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have scratched " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " behind the ear");
                 player.sendMessage(Config.PluginPrefix + ChatColor.YELLOW + PlayerName + ChatColor.LIGHT_PURPLE + " has scratched you behind the ear");
             }
+            player.getWorld().playSound(player.getLocation(), Sound.ENTITY_CAT_PURR, 0.3F, 1);
         } else {
             sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You can only scratch a Neko behind the ear!");
         }
