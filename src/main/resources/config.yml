@@ -22,6 +22,7 @@ Claw Poison Level: 1
 Claw Poison Duration: 10
 Claw Poison Chance: 25
 Claw Damage: 1
+Claw Damage Additive: false
 
 GlobalCommandMessages: false
 InedibleForCat:
@@ -43,4 +44,4 @@ InedibleForCat:
   - CARROT_ITEM
   - POTATO_ITEM
   - MELON
-ConfigVersion: 1.2
+ConfigVersion: 1.3

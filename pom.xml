@@ -6,7 +6,7 @@
 
     <groupId>com.gmail.kurumitk78</groupId>
     <artifactId>NekoC</artifactId>
-    <version>1.7.0-Alpha</version>
+    <version>1.7.1</version>
     <packaging>jar</packaging>
 
     <name>NekoC</name>

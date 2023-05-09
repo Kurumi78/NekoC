@@ -36,6 +36,8 @@ public class Config {
     public static int ClawPoisonChance;
 
     public static double ClawDamage;
+
+    public static boolean ClawDamageAdditive;
     public static boolean Purr;
     public static boolean Earscratch;
     public static boolean Attention;
@@ -104,13 +106,19 @@ public class Config {
             mainConfig.set("ConfigVersion", 1.1);
             mainConfig.save(configDirectory + mainConfigFileName);
         }
-        if(mainConfig.get("ConfigVersion").equals(1.1)) {Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.1");mainConfig.set("Claws", true);
+        if(mainConfig.get("ConfigVersion").equals(1.1)) {Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.2");mainConfig.set("Claws", true);
         mainConfig.set("Claw Poison Level", 1);
         mainConfig.set("Claw Poison Duration", 10);
         mainConfig.set("Claw Poison Chance", 25);
         mainConfig.set("Claw Damage", 1);
         mainConfig.set("ConfigVersion", 1.2);
         mainConfig.save(configDirectory + mainConfigFileName);
+        }
+        if(mainConfig.get("ConfigVersion").equals(1.2)){
+            Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.3");
+            mainConfig.set("Claw Damage Additive", false);
+            mainConfig.set("ConfigVersion", 1.3);
+            mainConfig.save(configDirectory + mainConfigFileName);
         }
 
 
@@ -133,6 +141,7 @@ public class Config {
          ClawPoisonDuration = mainConfig.getInt("Claw Poison Duration");
          ClawPoisonChance = mainConfig.getInt("Claw Poison Chance");
          ClawDamage = mainConfig.getDouble("Claw Damage");
+         ClawDamageAdditive = mainConfig.getBoolean("Claw Damage Additive");
          GlobalCommandMessages = mainConfig.getBoolean("GlobalCommandMessages");
          NekoList =  new ArrayList<String>(nekoListConfig.getStringList("Nekos"));
          inedibleForCat = new ArrayList<String>(mainConfig.getStringList("InedibleForCat"));
