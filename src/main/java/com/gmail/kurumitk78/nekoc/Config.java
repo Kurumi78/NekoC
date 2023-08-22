@@ -47,6 +47,8 @@ public class Config {
     public static ArrayList<String> inedibleForCat = null;
     public static ArrayList<String> NekoList =  null;
 
+    public static boolean permChecks;
+
 
 
     private static YamlConfiguration mainConfig = null;
@@ -120,6 +122,12 @@ public class Config {
             mainConfig.set("ConfigVersion", 1.3);
             mainConfig.save(configDirectory + mainConfigFileName);
         }
+        if(mainConfig.get("ConfigVersion").equals(1.3)){
+            Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.4");
+            mainConfig.set("Permission based Neko Checking", false);
+            mainConfig.save(configDirectory + mainConfigFileName);
+
+        }
 
 
          PluginPrefix = ChatColor.translateAlternateColorCodes('&', mainConfig.getString("PluginPrefix"));
@@ -145,6 +153,7 @@ public class Config {
          GlobalCommandMessages = mainConfig.getBoolean("GlobalCommandMessages");
          NekoList =  new ArrayList<String>(nekoListConfig.getStringList("Nekos"));
          inedibleForCat = new ArrayList<String>(mainConfig.getStringList("InedibleForCat"));
+         permChecks = mainConfig.getBoolean("Permission based Neko Checking");
 
 
         for(int i = 0; i < NekoList.size(); i++){

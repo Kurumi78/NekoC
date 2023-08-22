@@ -1,5 +1,7 @@
 PluginPrefix: '&a[NekoC]'
 
+Permission based Neko Checking: false
+
 NekoChat: true
 
 MeatOnly: true
@@ -44,4 +46,4 @@ InedibleForCat:
   - CARROT_ITEM
   - POTATO_ITEM
   - MELON
-ConfigVersion: 1.3
+ConfigVersion: 1.4
