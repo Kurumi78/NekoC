@@ -82,8 +82,12 @@ public final class NekoC extends JavaPlugin {
             Config.saveAll();
     }
     public static boolean isNeko(final Player p) {
-        final String name = p.getUniqueId().toString();
-        return Config.NekoList.contains(name);
-    }
+        if (Config.permChecks) {
+            return p.hasPermission("NekoC.isneko");
+        } else {
+            final String name = p.getUniqueId().toString();
+            return Config.NekoList.contains(name);
 
+        }
+    }
 }

@@ -1,5 +1,7 @@
 PluginPrefix: '&a[NekoC]'
 
+Permission based Neko Checking: false
+
 NekoChat: true
 
 MeatOnly: true
