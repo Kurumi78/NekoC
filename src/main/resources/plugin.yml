@@ -17,5 +17,17 @@ commands:
   Hiss:
   Scratch:
   SwiftSneak:
+
+
+permissions:
+  NekoC.isneko:
+    default: false
+
+  NekoC.nekotf:
+    default: false
+
+  NekoC.admin:
+    default: op
+
   
   
