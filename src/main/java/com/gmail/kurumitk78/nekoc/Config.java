@@ -163,7 +163,7 @@ public class Config {
         }
     }
     public static String uuidConvert(final String name) {
-        Bukkit.getLogger().info("Converting" + name + "toUUID");
+        Bukkit.getLogger().info("Converting " + name + " toUUID");
         OfflinePlayer p = Bukkit.getOfflinePlayer(name); //Yes the method is depreciated. It's fine in this use case, im not using it to store data, just converting the player name to UUID.
         return p.getUniqueId().toString();
 
