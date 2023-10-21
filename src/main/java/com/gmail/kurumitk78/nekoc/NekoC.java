@@ -19,6 +19,7 @@ public final class NekoC extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
+        this.saveResource("NekoList.yml", false);
         Config.setConfigDirectory(this.getDataFolder().getAbsolutePath());
         try {
             Config.reloadConfigs();
