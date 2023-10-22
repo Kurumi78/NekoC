@@ -88,7 +88,7 @@ public final class NekoC extends JavaPlugin {
     public void onDisable() {
             Config.saveAll();
     }
-    public static boolean isNeko(final Player p) {
+    public static boolean isNeko(final Player p) { //You can use this in other plugins if they need to Neko Check.
         if (Config.permChecks) {
             return p.hasPermission("NekoC.isneko");
         } else {
