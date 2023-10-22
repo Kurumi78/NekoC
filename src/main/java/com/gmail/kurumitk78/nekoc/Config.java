@@ -168,7 +168,7 @@ public class Config {
 
 
         for(int i = 0; i < NekoList.size(); i++){
-            if (!NekoList.get(i).matches("[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}")) {
+            if (!NekoList.get(i).matches("[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}")) { //Regex for a MC UUID.
                 NekoList.set(i, uuidConvert(NekoList.get(i)));
             }
         }
