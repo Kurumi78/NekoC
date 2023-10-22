@@ -9,7 +9,7 @@ public class NekoChat implements Listener
     @EventHandler
     public void onPlayerChat(final AsyncPlayerChatEvent event) {
         if (NekoC.isNeko(event.getPlayer())) {
-            String msg = event.getMessage(); //to-do: Use fucking regex instead of this garbage
+            String msg = event.getMessage(); //to-do: Fix this nonsense
             msg = msg.replace("na", "nya");
             msg = msg.replace("nu", "ny");
             msg = msg.replace("ni", "nyi");
