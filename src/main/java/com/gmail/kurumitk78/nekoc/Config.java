@@ -27,6 +27,8 @@ public class Config {
 
     public static boolean Swiftsneak;
 
+    public static int SwiftsneakLevel;
+
     public static boolean Claws;
 
     public static int ClawPoisonLevel;
@@ -125,6 +127,14 @@ public class Config {
         if(mainConfig.get("ConfigVersion").equals(1.3)){
             Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.4");
             mainConfig.set("Permission based Neko Checking", false);
+            mainConfig.set("ConfigVersion", 1.4);
+            mainConfig.save(configDirectory + mainConfigFileName);
+
+        }
+        if(mainConfig.get("ConfigVersion").equals(1.4)){
+            Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.5");
+            mainConfig.set("Permission based Neko Checking", false);
+            mainConfig.set("ConfigVersion", 1.5);
             mainConfig.save(configDirectory + mainConfigFileName);
 
         }
@@ -139,6 +149,7 @@ public class Config {
          Nightvision = mainConfig.getBoolean("Nightvision");
          Jumpboost = mainConfig.getBoolean("Jumpboost");
          Swiftsneak = mainConfig.getBoolean("SwiftSneak");
+         SwiftsneakLevel= mainConfig.getInt("SwiftSneak Level");
          Purr = mainConfig.getBoolean("Purr");
          Earscratch = mainConfig.getBoolean("Earscratch");
          Attention = mainConfig.getBoolean("Attention");

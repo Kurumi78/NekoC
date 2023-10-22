@@ -33,7 +33,7 @@ public class SwiftSneak implements CommandExecutor {
                 loreList.add("§dEnhanced by Catlike Agility");
                 pantsMeta.setLore(loreList);
                 pants.setItemMeta(pantsMeta);
-                pants.addUnsafeEnchantment(Enchantment.SWIFT_SNEAK, 3);
+                pants.addUnsafeEnchantment(Enchantment.SWIFT_SNEAK, Config.SwiftsneakLevel);
                 commandSender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have started sneaking with your catlike agility");
             }
         }

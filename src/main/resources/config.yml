@@ -20,6 +20,8 @@ Scratch: true
 SwiftSneak: true
 Claws: true
 
+SwiftSneak Level: 3
+
 Claw Poison Level: 1
 Claw Poison Duration: 10
 Claw Poison Chance: 25
@@ -46,4 +48,4 @@ InedibleForCat:
   - CARROT_ITEM
   - POTATO_ITEM
   - MELON
-ConfigVersion: 1.4
+ConfigVersion: 1.5
