@@ -1,7 +1,6 @@
 PluginPrefix: '&a[NekoC]'
 
-Permission based Neko Checking: false
-
+Permission based Neko Checking: false #Luckperms is required for this feature, other Permission plugins will not work.
 NekoChat: true
 
 MeatOnly: true

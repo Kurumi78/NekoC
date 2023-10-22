@@ -133,7 +133,7 @@ public class Config {
         }
         if(mainConfig.get("ConfigVersion").equals(1.4)){
             Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.5");
-            mainConfig.set("Permission based Neko Checking", false);
+            mainConfig.set("SwiftSneak Level", 3);
             mainConfig.set("ConfigVersion", 1.5);
             mainConfig.save(configDirectory + mainConfigFileName);
 
