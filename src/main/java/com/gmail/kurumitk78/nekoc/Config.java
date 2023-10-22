@@ -46,6 +46,8 @@ public class Config {
     public static boolean Hiss;
     public static boolean Scratch;
     public static boolean GlobalCommandMessages;
+
+    public static boolean ScaredCreepers;
     public static ArrayList<String> inedibleForCat = null;
     public static ArrayList<String> NekoList =  null;
 
@@ -134,6 +136,7 @@ public class Config {
         if(mainConfig.get("ConfigVersion").equals(1.4)){
             Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.5");
             mainConfig.set("SwiftSneak Level", 3);
+            mainConfig.set("Scared Creepers", false);
             mainConfig.set("ConfigVersion", 1.5);
             mainConfig.save(configDirectory + mainConfigFileName);
 
@@ -162,6 +165,7 @@ public class Config {
          ClawDamage = mainConfig.getDouble("Claw Damage");
          ClawDamageAdditive = mainConfig.getBoolean("Claw Damage Additive");
          GlobalCommandMessages = mainConfig.getBoolean("GlobalCommandMessages");
+         ScaredCreepers = mainConfig.getBoolean("Scared Creepers");
          NekoList =  new ArrayList<String>(nekoListConfig.getStringList("Nekos"));
          inedibleForCat = new ArrayList<String>(mainConfig.getStringList("InedibleForCat"));
          permChecks = mainConfig.getBoolean("Permission based Neko Checking");

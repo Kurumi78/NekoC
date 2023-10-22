@@ -75,7 +75,9 @@ public final class NekoC extends JavaPlugin {
             Bukkit.getPluginManager().registerEvents(new ArmorEvent(), this);
         }
         Bukkit.getPluginManager().registerEvents(new Claws(), this);
-
+        if(Config.ScaredCreepers) {
+            Bukkit.getPluginManager().registerEvents(new MobTargetEvent(), this);
+        }
 
         this.getCommand("nekotf").setExecutor(new NekoTF());
 
