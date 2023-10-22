@@ -9,6 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.io.IOException;
 
 
@@ -19,8 +20,13 @@ public final class NekoC extends JavaPlugin {
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
-        this.saveResource("NekoList.yml", false);
-        Config.setConfigDirectory(this.getDataFolder().getAbsolutePath());
+
+        File nekoListFile = new File(getDataFolder(), "NekoList.yml");
+        if(!nekoListFile.exists()) {
+            this.saveResource("NekoList.yml", false); //If this doesnt exist we create it.
+        }
+
+        Config.setConfigDirectory(this.getDataFolder().getAbsolutePath()); // Let the config have Life!
         try {
             Config.reloadConfigs();
         } catch (IOException e) {
@@ -28,7 +34,7 @@ public final class NekoC extends JavaPlugin {
         }
 
         if (Config.Pat) {
-            this.getCommand("Pat").setExecutor(new Pat());
+            this.getCommand("Pat").setExecutor(new Pat());   //This block of text starts up the features :D
         }
         if (Config.Lovebite) {
             this.getCommand("Lovebite").setExecutor(new Lovebite());
