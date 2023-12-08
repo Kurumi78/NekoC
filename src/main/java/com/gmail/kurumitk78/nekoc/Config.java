@@ -45,6 +45,8 @@ public class Config {
     public static boolean Attention;
     public static boolean Hiss;
     public static boolean Scratch;
+
+    public static boolean CommandSounds;
     public static boolean GlobalCommandMessages;
 
     public static boolean ScaredCreepers;
@@ -141,6 +143,13 @@ public class Config {
             mainConfig.save(configDirectory + mainConfigFileName);
 
         }
+        if(mainConfig.get("ConfigVersion").equals(1.5)){
+            Bukkit.getLogger().log(Level.INFO, "[NekoC] Updating config to 1.6");
+            mainConfig.set("Command Sounds", true);
+            mainConfig.set("ConfigVersion", 1.6);
+            mainConfig.save(configDirectory + mainConfigFileName);
+
+        }
 
 
          PluginPrefix = ChatColor.translateAlternateColorCodes('&', mainConfig.getString("PluginPrefix"));
@@ -154,6 +163,7 @@ public class Config {
          Swiftsneak = mainConfig.getBoolean("SwiftSneak");
          SwiftsneakLevel= mainConfig.getInt("SwiftSneak Level");
          Purr = mainConfig.getBoolean("Purr");
+         CommandSounds = mainConfig.getBoolean("Command Sounds");
          Earscratch = mainConfig.getBoolean("Earscratch");
          Attention = mainConfig.getBoolean("Attention");
          Hiss = mainConfig.getBoolean("Hiss");

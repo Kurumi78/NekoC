@@ -24,6 +24,9 @@ public class Purr implements CommandExecutor {
                 sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " you purr on " + ChatColor.YELLOW + target.getDisplayName());
                 target.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You hear the soft sound of " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + "puring");
             }
+            if(Config.CommandSounds){
+                target.playSound(target.getLocation(), Sound.ENTITY_CAT_PURR, 5, 1);
+            }
         }
         return true;
     }
