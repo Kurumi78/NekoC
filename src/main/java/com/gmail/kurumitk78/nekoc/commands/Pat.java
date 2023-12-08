@@ -25,7 +25,9 @@ public class Pat implements CommandExecutor {
                 sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have pat " + target.getDisplayName());
                 target.sendMessage(Config.PluginPrefix + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " has pat you");
             }
-            player.getWorld().playSound(player.getLocation(), Sound.ENTITY_CAT_PURR, 0.3F, 1);
+            if(Config.CommandSounds){
+                target.playSound(target.getLocation(), Sound.ENTITY_CAT_AMBIENT, 5, 1);
+            }
         } else {
             sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You can only pat a Neko!");
         }
