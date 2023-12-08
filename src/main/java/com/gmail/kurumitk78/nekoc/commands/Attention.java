@@ -26,6 +26,9 @@ public class Attention implements CommandExecutor {
             player.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have tried to get the attention of " + ChatColor.YELLOW + target.getName() + ChatColor.LIGHT_PURPLE + "!");
             target.sendMessage(Config.PluginPrefix + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " wants your attention!");
         }
+        if(Config.CommandSounds){
+            target.playSound(target.getLocation(), Sound.ENTITY_CAT_STRAY_AMBIENT, 5, 1);
+        }
         return true;
     }
 }
