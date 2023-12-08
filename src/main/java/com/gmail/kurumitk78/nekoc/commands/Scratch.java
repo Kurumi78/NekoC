@@ -24,6 +24,9 @@ public class Scratch implements CommandExecutor {
                 player.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You have scratched " + ChatColor.YELLOW + target.getDisplayName() + ChatColor.LIGHT_PURPLE + "!");
                 target.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You feel " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + "'s claws scratch you!");
             }
+            if(Config.CommandSounds){
+                target.playSound(target.getLocation(), Sound.ENTITY_CAT_HISS, 5, 1);
+            }
         }
         return true;
     }
