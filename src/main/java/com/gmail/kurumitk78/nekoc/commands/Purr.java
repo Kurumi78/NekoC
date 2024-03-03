@@ -22,7 +22,7 @@ public class Purr implements CommandExecutor {
                 Bukkit.broadcastMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " is purring on the feet of " + ChatColor.LIGHT_PURPLE + target.getName());
             } else {
                 sender.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " you purr on " + ChatColor.YELLOW + target.getDisplayName());
-                target.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You hear the soft sound of " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + "puring");
+                target.sendMessage(Config.PluginPrefix + ChatColor.LIGHT_PURPLE + " You hear the soft sound of " + ChatColor.YELLOW + player.getDisplayName() + ChatColor.LIGHT_PURPLE + " purring");
             }
             if(Config.CommandSounds){
                 target.playSound(target.getLocation(), Sound.ENTITY_CAT_PURR, 5, 1);
