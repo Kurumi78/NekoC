@@ -24,7 +24,7 @@ permissions:
     default: false
 
   NekoC.nekotf:
-    default: false
+    default: op
 
   NekoC.admin:
     default: op
